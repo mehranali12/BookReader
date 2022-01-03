@@ -1,7 +1,6 @@
 import React from 'react';
 import { Image, View, TextInput, StyleSheet, TouchableOpacity, ScrollView, FlatList, Text } from 'react-native';
 import { COLORS } from '../../constants/colors';
-import { FONTS } from '../../constants/fonts';
 import Header from '../../components/header';
 import { TextStyle } from '../../utils/GlobalStyles';
 import Card from '../../components/Card';
@@ -37,13 +36,13 @@ const DATA = [
 
 export default function Search({ navigation }) {
     return (
-        <View style={{flex: 1,}}>
+        <View style={{ flex: 1, }}>
             <Header
                 title='ALIF'
                 icon={require('../../assets/icons/leftErrow.png')}
                 onPress={() => navigation.goBack()}
             />
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView>
                 <View style={{ flexDirection: 'row', borderWidth: 1, height: 40, paddingLeft: 20, justifyContent: 'center', alignItems: 'center', marginTop: 20, marginHorizontal: 20, borderRadius: 30, }}>
                     <Image source={require('../../assets/icons/search1.png')}
                         style={{ justifyContent: 'center' }}
@@ -61,7 +60,10 @@ export default function Search({ navigation }) {
                     </Text>
                 </View>
 
-                <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 15, }}>
+
+                {/* https://stackoverflow.com/questions/58243680/react-native-another-virtualizedlist-backed-container */}
+
+                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: 15, }}>
                     <FlatList
                         data={DATA}
                         renderItem={({ item }) => (
@@ -75,6 +77,16 @@ export default function Search({ navigation }) {
                         numColumns={3}
                     />
                 </View>
+{/*                 
+                {DATA.map((item, index) => (
+                    <View key={index}>
+                        <Card
+                            text={item.text}
+                            icon={item.icon}
+                            navigation={navigation}
+                        />
+                    </View>
+                ))} */}
 
                 {/* peera how to show this catagory in loop */}
 
@@ -84,48 +96,48 @@ export default function Search({ navigation }) {
                 // onPress={() => navigation.goBack()}
                 />
                 <SearchCatagory
-                    text='Art'
+                    text='Biography'
                     icon={require('../../assets/icons/rightErrow.png')}
                 // onPress={() => navigation.goBack()}
                 />
                 <SearchCatagory
-                    text='Art'
+                    text='Business'
                     icon={require('../../assets/icons/rightErrow.png')}
                 // onPress={() => navigation.goBack()}
                 />
                 <SearchCatagory
-                    text='Art'
+                    text='Chicl-lit'
                     icon={require('../../assets/icons/rightErrow.png')}
                 // onPress={() => navigation.goBack()}
                 />
                 <SearchCatagory
-                    text='Art'
+                    text='Classics'
                     icon={require('../../assets/icons/rightErrow.png')}
                 // onPress={() => navigation.goBack()}
                 />
                 <SearchCatagory
-                    text='Art'
+                    text='Comics'
                     icon={require('../../assets/icons/rightErrow.png')}
                 // onPress={() => navigation.goBack()}
                 />
                 <SearchCatagory
-                    text='Art'
+                    text='Crime'
                     icon={require('../../assets/icons/rightErrow.png')}
                 // onPress={() => navigation.goBack()}
                 />
                 <SearchCatagory
-                    text='Art'
+                    text='Fantacy'
                     icon={require('../../assets/icons/rightErrow.png')}
                 // onPress={() => navigation.goBack()}
                 />
 
                 <SearchCatagory
-                    text='Art'
+                    text='Fiction'
                     icon={require('../../assets/icons/rightErrow.png')}
                 // onPress={() => navigation.goBack()}
                 />
                 <SearchCatagory
-                    text='Art'
+                    text='Classics'
                     icon={require('../../assets/icons/rightErrow.png')}
                 // onPress={() => navigation.goBack()}
                 />

@@ -2,7 +2,6 @@ import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { COLORS } from '../constants/colors';
-import { FONTS } from '../constants/fonts';
 import { useNavigation } from '@react-navigation/native';
 import { GolbalStyle, TextStyle } from '../utils/GlobalStyles';
 

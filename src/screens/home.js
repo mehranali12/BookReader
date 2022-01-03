@@ -1,9 +1,6 @@
 import React from 'react';
-import { Image, View, Text, StyleSheet, TouchableOpacity, ScrollView, FlatList } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 import { COLORS } from '../constants/colors';
-import { FONTS } from '../constants/fonts';
-import TextInputField from '../components/TextInputField';
-import TextButton from "../components/TextButton";
 import Header from '../components/header';
 import Views from '../components/view';
 

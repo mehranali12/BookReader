@@ -1,7 +1,6 @@
 import React from 'react';
-import { Image, View, FlatList, Text } from 'react-native';
+import { View, FlatList, Text } from 'react-native';
 import { COLORS } from '../../constants/colors';
-import { FONTS } from '../../constants/fonts';
 import Header from '../../components/header';
 import Book from '../../components/Book';
 import { TextStyle } from '../../utils/GlobalStyles';
