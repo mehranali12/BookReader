@@ -8,31 +8,29 @@ import { TextStyle } from "../utils/GlobalStyles";
 
 export default function view({ authname, icon, title, text, date, icon2, navigation }) {
     return (
-        <View style={Styles.maincontainer}>
+        <TouchableOpacity
+            onPress={() => navigation.navigate('reading')}
+            style={Styles.view}>
+            <View style={{width:'70%'}}>
+                <Text style={[Styles.title, TextStyle.h5]}>{authname}</Text>
+                <Text style={[Styles.title, TextStyle.h5, { fontFamily: FONTS.SemiBold, }]}>{title}</Text>
+                <Text style={[Styles.title, TextStyle.h5]}>{text}</Text>
 
-            <View style={Styles.view}>
-                <View>
-                    <Text style={[Styles.title, TextStyle.h5]}>{authname}</Text>
-                    <Text style={[Styles.title, TextStyle.h5, { fontFamily: FONTS.SemiBold, }]}>{title}</Text>
-                    <Text style={[Styles.title, TextStyle.h5]}>{text}</Text>
-
-                    <View style={{ flexDirection: 'row', paddingTop: 10, }}>
-                        <Text style={[Styles.title, TextStyle.h4, { color: COLORS.grayDark, }]}>{date}</Text>
-                        <Image source={icon2}
-                            style={{ height: 13, width: 13, marginLeft: 5, }}
-                        />
-                    </View>
-                </View>
-                <View style={{}}>
-                    <TouchableOpacity onPress={() => navigation.navigate('reading')}>
-                        <Image source={icon}
-                            style={{ height: 88, width: 73, }}
-                        />
-                    </TouchableOpacity>
+                <View style={{ flexDirection: 'row', paddingTop: 10, }}>
+                    <Text style={[Styles.title, TextStyle.h4, { color: COLORS.grayDark, }]}>{date}</Text>
+                    <Image source={icon2}
+                        style={{ height: 13, width: 13, marginLeft: 5, }}
+                    />
                 </View>
             </View>
 
-        </View>
+            <TouchableOpacity onPress={() => navigation.navigate('reading')}>
+                <Image source={icon}
+                    style={{ height: 88, width: 73, }}
+                />
+            </TouchableOpacity>
+
+        </TouchableOpacity>
     );
 }
 
@@ -42,10 +40,14 @@ const Styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         backgroundColor: COLORS.white,
-        borderBottomWidth: 2,
+        borderWidth: 2,
+        marginHorizontal: 12,
         borderColor: COLORS.grayDark,
-        paddingTop: 30,
-        paddingBottom: 25,
+        paddingTop: 16,
+        paddingBottom: 16,
+        borderRadius: 8,
+        marginTop: 12,
+        flexWrap:"wrap"
     },
     title: {
         fontStyle: 'normal',

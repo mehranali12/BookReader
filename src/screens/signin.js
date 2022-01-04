@@ -37,22 +37,13 @@ export default signin = ({ navigation }) => {
 
             <View style={{ marginTop: 30, }} />
             <View style={{
-                borderWidth: 1,
-                backgroundColor: COLORS.primary,
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderColor: COLORS.white,
-                fontFamily: FONTS.Regular,
-                borderRadius: 30,
-                marginLeft: 30,
-                marginRight: 30,
-                paddingRight: 30,
-                height: 46,
+                marginHorizontal: 24
             }}>
                 <TextButton
                     style={{ color: COLORS.white, }}
                     text='Sign In'
-                onPress={() => navigation.navigate('home')}
+                    bgcolor={COLORS.primary}
+                    onPress={() => navigation.navigate('home')}
                 />
             </View>
 
@@ -67,15 +58,15 @@ export default signin = ({ navigation }) => {
             <TouchableOpacity
                 onPress={() => navigation.navigate('forgetPassword')}
                 style={{ marginTop: 20, }}>
-                <Text style={[styles.forgetpassoerd , TextStyle.h6]}>Forgot Password?</Text>
+                <Text style={[styles.forgetpassoerd, TextStyle.h6]}>Forgot Password?</Text>
             </TouchableOpacity>
 
             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>
                 <Text style={[styles.allBlaceText, TextStyle.h6]}>Not a member? </Text>
                 <TouchableOpacity
-                onPress={() => navigation.navigate('signup')}
+                    onPress={() => navigation.navigate('signup')}
                 >
-                    <Text style={[styles.forgetpassoerd , TextStyle.h6]}>Sign up</Text>
+                    <Text style={[styles.forgetpassoerd, TextStyle.h6]}>Sign up</Text>
                 </TouchableOpacity>
             </View>
 

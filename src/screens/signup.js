@@ -41,22 +41,13 @@ export default signup = ({ navigation }) => {
 
             <View style={{ marginTop: 30, }} />
             <View style={{
-                borderWidth: 1,
-                backgroundColor: COLORS.primary,
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderColor: COLORS.white,
-                fontFamily: FONTS.Regular,
-                borderRadius: 30,
-                marginLeft: 30,
-                marginRight: 30,
-                paddingRight: 30,
-                height: 46,
+                marginHorizontal: 24
             }}>
                 <TextButton
                     style={{ color: COLORS.white, }}
                     text='Sign Up'
-                onPress={() => navigation.navigate('signin')}
+                    bgcolor={COLORS.primary}
+                    onPress={() => navigation.navigate('signin')}
                 />
             </View>
 
@@ -77,7 +68,7 @@ export default signup = ({ navigation }) => {
             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>
                 <Text style={styles.allBlaceText}>Not a member? </Text>
                 <TouchableOpacity
-                onPress={() => navigation.navigate('signin')}
+                    onPress={() => navigation.navigate('signin')}
                 >
                     <Text style={styles.forgetpassoerd}>Sign In</Text>
                 </TouchableOpacity>

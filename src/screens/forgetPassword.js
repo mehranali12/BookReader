@@ -29,23 +29,26 @@ export default forgetPassoerd = ({ navigation }) => {
                 />
             </View>
 
-            <View style={{ marginTop: 30, }} />
-            <View style={[styles.primaryButton, { backgroundColor: COLORS.primary,}]}>
-                <TextButton
-                    style={{ color: COLORS.white, }}
-                    text='Submit'
-                onPress={() => navigation.navigate('otp')}
-                />
-            </View>
+            <View style={{ marginTop: 30, marginHorizontal:24 }} >
+                <View>
+                    <TextButton
+                        style={{ color: COLORS.white, }}
+                        text='Submit'
+                        bgcolor={COLORS.primary}
+                        onPress={() => navigation.navigate('otp')}
+                    />
+                </View>
 
-            <View style={[styles.primaryButton, { backgroundColor: COLORS.grayDark, marginTop: 16,}]}>
-                <TextButton
-                    style={{ color: COLORS.black, }}
-                    text='Cancle'
-                onPress={() => navigation.navigate('resetPassword')}
-                //for now we can navigate the resetpassword screen from here. but in future it will navigate dinamically when the opt will conform in forgetpassword screen. ok
+                <View style={{ marginTop: 16 }}>
+                    <TextButton
+                        style={{ color: COLORS.black, }}
+                        text='Cancle'
+                        bgcolor={COLORS.grayDark}
+                        onPress={() => navigation.navigate('resetPassword')}
+                    //for now we can navigate the resetpassword screen from here. but in future it will navigate dinamically when the opt will conform in forgetpassword screen. ok
 
-                />
+                    />
+                </View>
             </View>
 
         </View>

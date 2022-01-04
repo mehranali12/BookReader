@@ -103,7 +103,6 @@ export default function home ({ navigation }) {
             <Header
                 title='Home'
             />
-
             <FlatList
                 data={data}
                 renderItem={({item}) => (
@@ -118,6 +117,11 @@ export default function home ({ navigation }) {
                     />
 
                 )}
+                ListFooterComponent={()=> {
+                    return(
+                        <View style={{height:12}} />
+                    )
+                }}
                 keyExtractor={(item, index)=> index}
             />
         </View>

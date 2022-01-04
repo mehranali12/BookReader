@@ -11,9 +11,12 @@ export default function Book({ text, subText, icon, navigation }) {
         <ImageBackground
             source={icon}
             resizeMode="cover"
-            style={{ width: 300, height: 180, marginRight: 16 }}
+            imageStyle={{
+                borderRadius:8
+            }}
+            style={{ width: 200, height: 180, marginRight: 16, }}
         >
-            <View style={{ backgroundColor: "rgba(0,0,0,0.4)", flex: 1, justifyContent: "flex-end" ,  paddingLeft: 14,}}>
+            <View style={{ backgroundColor: "rgba(0,0,0,0.4)", flex: 1, justifyContent: "flex-end" ,  paddingLeft: 14, borderRadius:8}}>
                 <Text style={[Styles.title, TextStyle.h4]}>{text}</Text>
                 <Text style={[Styles.title, TextStyle.h4 , {paddingBottom:5}]}>{subText}</Text>
             </View>
