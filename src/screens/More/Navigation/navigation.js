@@ -3,6 +3,9 @@ import { StyleSheet } from 'react-native';
 import More from '../More';
 import CustomDrawer from '../component/CustomDrawer';
 import changePassword from '../../User/changePassword';
+import accountSetting from '../../User/accountSetting';
+import about from '../../User/about';
+import updateProfile from '../../User/updateProfile';
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -34,6 +37,9 @@ function stack() {
             }}>
             <Stack.Screen name="More" component={More} />
             <Stack.Screen name="changePassword" component={changePassword} />
+            <Stack.Screen name="accountSetting" component={accountSetting} />
+            <Stack.Screen name="about" component={about} />
+            <Stack.Screen name="updateProfile" component={updateProfile} />
             <Stack.Screen name="setting" component={DrawerFunction} />
         </Stack.Navigator>
     )

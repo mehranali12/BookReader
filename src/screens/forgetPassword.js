@@ -45,7 +45,6 @@ export default forgetPassoerd = ({ navigation }) => {
                         text='Cancle'
                         bgcolor={COLORS.grayDark}
                         onPress={() => navigation.navigate('resetPassword')}
-                    //for now we can navigate the resetpassword screen from here. but in future it will navigate dinamically when the opt will conform in forgetpassword screen. ok
 
                     />
                 </View>
