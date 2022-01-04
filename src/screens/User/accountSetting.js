@@ -4,6 +4,7 @@ import { COLORS } from '../../constants/colors';
 import { TextStyle } from '../../utils/GlobalStyles';
 import Header from '../../components/header';
 import TextButton from '../../components/TextButton';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 export default function accountSetting({ props, navigation }) {
@@ -50,12 +51,14 @@ export default function accountSetting({ props, navigation }) {
 
 
             <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-                <View style={{ marginTop: 50, marginHorizontal: 24, marginBottom: 20 }}>
-                    <TextButton
-                        style={{ color: COLORS.white, }}
-                        text='Delete Account'
-                    />
-                </View>
+                <TouchableOpacity onPress={() => navigation.navigate('signin')}>
+                    <View style={{ marginTop: 50, marginHorizontal: 24, marginBottom: 20 }}>
+                        <TextButton
+                            style={{ color: COLORS.white, }}
+                            text='Delete Account'
+                        />
+                    </View>
+                </TouchableOpacity>
             </View>
 
         </View>
