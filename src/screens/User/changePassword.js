@@ -48,7 +48,7 @@ const changePassword = ({ props, navigation }) => {
             <View style={{ marginTop: 24, marginHorizontal: 24, }}>
                 <TextButton
                     style={{ color: COLORS.black, }}
-                    text='Cancle'
+                    text='Cancel'
                     bgcolor={COLORS.grayDark}
                 />
             </View>
