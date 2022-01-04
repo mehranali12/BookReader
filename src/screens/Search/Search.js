@@ -42,7 +42,9 @@ export default function Search({ navigation }) {
                 icon={require('../../assets/icons/leftErrow.png')}
                 onPress={() => navigation.goBack()}
             />
-            <ScrollView>
+            <ScrollView
+            nestedScrollEnabled={true}
+            >
                 <View style={{ flexDirection: 'row', borderWidth: 1, height: 40, paddingLeft: 20, justifyContent: 'center', alignItems: 'center', marginTop: 20, marginHorizontal: 20, borderRadius: 30, }}>
                     <Image source={require('../../assets/icons/search1.png')}
                         style={{ justifyContent: 'center' }}
