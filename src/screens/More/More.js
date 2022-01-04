@@ -73,7 +73,7 @@ export default function More({ navigation }) {
                 onPress={() => navigation.goBack()}
             />
 
-            <View style={{ flex: 1.4, paddingTop: 45, backgroundColor: "#fff" }}>
+            <View style={{ flex: 0.7, paddingTop: 45, backgroundColor: "#fff" }}>
                 <View style={{ alignItems: "center" }}>
                     <Image
                         style={{ width: 130, height: 130, borderRadius: 100, }}
@@ -81,42 +81,45 @@ export default function More({ navigation }) {
                     />
                 </View>
 
-                <View style={{ flexDirection: 'row', marginTop: 10, alignItems: 'center', justifyContent: 'center' }}>
-                    <Text style={[TextStyle.h1]}>Mehran Ali</Text>
+                <View style={{ flexDirection: 'row', marginTop: 10, justifyContent:"center" }}>
+                    <Text style={[TextStyle.h1 , {marginLeft:24}]}>Mehran Ali</Text>
+                    <View style={{paddingLeft:12 , justifyContent:"center"}}>
                     <Image
-                        style={{ marginLeft: 12, }}
-                        source={require('../../assets/icons/edit.png')}
-                    />
+                      
+                      source={require('../../assets/icons/edit.png')}
+                  />
+                    </View>
+                  
                 </View>
                 <View style={{ flexDirection: 'row', marginTop: '4%', justifyContent: "center" }}>
-                    <View style={{ marginRight: '8%' }} >
+                    <View style={{ marginRight: '4%' }} >
                         <View style={{ alignItems: "center" }}>
                             <TouchableOpacity
                                 onPress={() => navigation.navigate('home')}
                             >
                                 <Image
-                                    style={{ width: 41, height: 41, }}
+                                    style={{ width: 24, height: 24, }}
                                     source={require('../../assets/icons/library_books.png')}
                                 />
                             </TouchableOpacity>
 
                         </View>
-                        <View style={{ marginTop: 6 }}>
+                        {/* <View style={{ marginTop: 6 }}>
                             <Text style={TextStyle.h5}>Reading Book</Text>
-                        </View>
+                        </View> */}
                     </View>
 
                     <View>
                         <TouchableOpacity onPress={() => navigation.openDrawer()}>
                             <Image
                                 resizeMode='cover'
-                                style={{ width: 41, height: 41 }}
+                                style={{ width: 24, height: 24 }}
                                 source={require('../../assets/icons/setting.png')}
                             />
                         </TouchableOpacity>
-                        <View style={{ marginTop: 6 }}>
+                        {/* <View style={{ marginTop: 6 }}>
                             <Text style={TextStyle.h5}>Setting</Text>
-                        </View>
+                        </View> */}
 
                     </View>
                 </View>
@@ -136,6 +139,12 @@ export default function More({ navigation }) {
                                 icon={item.icon}
                                 navigation={navigation}
                             />
+                        )
+                    }}
+                    ListHeaderComponent={()=> {
+                        return(
+                            <View style={{height:10}}>
+                                </View>
                         )
                     }}
                     keyExtractor={(item, index) => index}

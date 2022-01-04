@@ -1,13 +1,13 @@
-import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Image } from 'react-native'
-const Tab = createBottomTabNavigator();
-import { COLORS } from '../../constants/colors'
-import home from '../home';
+import React from 'react';
+import { Image } from 'react-native';
+import { COLORS } from '../../constants/colors';
 import Discover from '../Discover/Discover';
-import Search from '../Search/Search';
-import More from '../More/More';
+import home from '../home';
 import stack from '../More/Navigation/navigation';
+import Search from '../Search/Navigation/navigation';
+
+const Tab = createBottomTabNavigator();
 
 
 export default function tab() {

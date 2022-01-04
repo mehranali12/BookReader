@@ -37,19 +37,20 @@ const CustomDrawer = ({ props, navigation }) => {
                 />
             </View>
 
-            <View style={[styles.primaryButton, { backgroundColor: COLORS.primary, }]}>
+            <View style={{ marginHorizontal: 24, marginTop: 24 }}>
                 <TextButton
                     style={{ color: COLORS.white, }}
                     text='Reset Paswword'
+                    bgcolor={COLORS.primary}
                 // onPress={() => navigation.navigate('otp')}
                 />
             </View>
 
-            <View style={[styles.primaryButton, { backgroundColor: COLORS.grayDark, marginTop: 16, }]}>
+            <View style={{ marginTop: 16, marginHorizontal: 24 }}>
                 <TextButton
                     style={{ color: COLORS.black, }}
                     text='Cancle'
-                // onPress={() => navigation.navigate('home')}
+                    bgcolor={COLORS.grayDark}
                 />
             </View>
 

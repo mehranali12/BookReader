@@ -33,8 +33,27 @@ const DATA = [
     },
 ]
 
+function Category({ navigation }) {
+    return (
+        <View style={{ marginTop: 15, }}>
+            <FlatList
+                data={DATA}
+                renderItem={({ item }) => (
+                    <Card
+                        text={item.text}
+                        icon={item.icon}
+                        navigation={navigation}
+                    />
+                )}
+                keyExtractor={(item, index) => index}
+                numColumns={3}
+            />
+        </View>
+    )
+}
 
 export default function Search({ navigation }) {
+    const warning = ['removeWarning']
     return (
         <View style={{ flex: 1, }}>
             <Header
@@ -43,43 +62,41 @@ export default function Search({ navigation }) {
                 onPress={() => navigation.goBack()}
             />
             <ScrollView
-            nestedScrollEnabled={true}
+
             >
-                <View style={{ flexDirection: 'row', borderWidth: 1, height: 40, paddingLeft: 20, justifyContent: 'center', alignItems: 'center', marginTop: 20, marginHorizontal: 20, borderRadius: 30, }}>
-                    <Image source={require('../../assets/icons/search1.png')}
-                        style={{ justifyContent: 'center' }}
-                    />
-                    <TextInput
-                        placeholder='Sreach'
-                        style={[{ width: '100%', paddingLeft: 16, }]}
-                    />
-                </View>
+                <View style={{ marginHorizontal: 12 }}>
+                    <View style={{ flexDirection: 'row', borderWidth: 1, height: 40, paddingLeft: 20, justifyContent: 'center', alignItems: 'center', marginTop: 20, marginHorizontal: 20, borderRadius: 30, }}>
+                        <Image source={require('../../assets/icons/search1.png')}
+                            style={{ justifyContent: 'center' }}
+                        />
+                        <TextInput
+                            placeholder='Sreach'
+                            style={[{ width: '100%', paddingLeft: 16, }]}
+                        />
+                    </View>
 
-                <View style={{ marginTop: 10, alignItems: 'center', justifyContent: 'center', }}>
-                    <Text style={[TextStyle.h1], { color: COLORS.primary, fontWeight: '600', borderBottomWidth: 1, borderColor: COLORS.grayDark, }}>EXPLORE BY GENRE</Text>
-                    <Text style={[TextStyle.h6,], { textAlign: 'center', paddingTop: 10, fontWeight: '400' }}>
-                        See new release, most-read books, quotes, lists, and more in these popular genres
-                    </Text>
-                </View>
+                    <View style={{ marginTop: 10, alignItems: 'center', justifyContent: 'center', }}>
+                        <Text style={[TextStyle.h1], { color: COLORS.primary, fontWeight: '600', borderBottomWidth: 1, borderColor: COLORS.grayDark, }}>EXPLORE BY GENRE</Text>
+                        <Text style={[TextStyle.h6,], { textAlign: 'center', paddingTop: 10, fontWeight: '400' }}>
+                            See new release, most-read books, quotes, lists, and more in these popular genres
+                        </Text>
+                    </View>
 
 
-                {/* https://stackoverflow.com/questions/58243680/react-native-another-virtualizedlist-backed-container */}
+                    {/* https://stackoverflow.com/questions/58243680/react-native-another-virtualizedlist-backed-container */}
+                    <View>
+                        {warning.map((item, index) => {
+                            return (
+                                <View key={index}>
+                                    <View>
+                                    <Category navigation={navigation} />
+                                    </View>
+                                </View>
+                            )
+                        })}
 
-                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: 15, }}>
-                    <FlatList
-                        data={DATA}
-                        renderItem={({ item }) => (
-                            <Card
-                                text={item.text}
-                                icon={item.icon}
-                                navigation={navigation}
-                            />
-                        )}
-                        keyExtractor={(item, index) => index}
-                        numColumns={3}
-                    />
-                </View>
-{/*                 
+                    </View>
+                    {/*                 
                 {DATA.map((item, index) => (
                     <View key={index}>
                         <Card
@@ -90,59 +107,60 @@ export default function Search({ navigation }) {
                     </View>
                 ))} */}
 
-                {/* peera how to show this catagory in loop */}
+                    {/* peera how to show this catagory in loop */}
 
-                <SearchCatagory
-                    text='Art'
-                    icon={require('../../assets/icons/rightErrow.png')}
-                // onPress={() => navigation.goBack()}
-                />
-                <SearchCatagory
-                    text='Biography'
-                    icon={require('../../assets/icons/rightErrow.png')}
-                // onPress={() => navigation.goBack()}
-                />
-                <SearchCatagory
-                    text='Business'
-                    icon={require('../../assets/icons/rightErrow.png')}
-                // onPress={() => navigation.goBack()}
-                />
-                <SearchCatagory
-                    text='Chicl-lit'
-                    icon={require('../../assets/icons/rightErrow.png')}
-                // onPress={() => navigation.goBack()}
-                />
-                <SearchCatagory
-                    text='Classics'
-                    icon={require('../../assets/icons/rightErrow.png')}
-                // onPress={() => navigation.goBack()}
-                />
-                <SearchCatagory
-                    text='Comics'
-                    icon={require('../../assets/icons/rightErrow.png')}
-                // onPress={() => navigation.goBack()}
-                />
-                <SearchCatagory
-                    text='Crime'
-                    icon={require('../../assets/icons/rightErrow.png')}
-                // onPress={() => navigation.goBack()}
-                />
-                <SearchCatagory
-                    text='Fantacy'
-                    icon={require('../../assets/icons/rightErrow.png')}
-                // onPress={() => navigation.goBack()}
-                />
+                    <SearchCatagory
+                        text='Art'
+                        icon={require('../../assets/icons/rightErrow.png')}
+                    // onPress={() => navigation.goBack()}
+                    />
+                    <SearchCatagory
+                        text='Biography'
+                        icon={require('../../assets/icons/rightErrow.png')}
+                    // onPress={() => navigation.goBack()}
+                    />
+                    <SearchCatagory
+                        text='Business'
+                        icon={require('../../assets/icons/rightErrow.png')}
+                    // onPress={() => navigation.goBack()}
+                    />
+                    <SearchCatagory
+                        text='Chicl-lit'
+                        icon={require('../../assets/icons/rightErrow.png')}
+                    // onPress={() => navigation.goBack()}
+                    />
+                    <SearchCatagory
+                        text='Classics'
+                        icon={require('../../assets/icons/rightErrow.png')}
+                    // onPress={() => navigation.goBack()}
+                    />
+                    <SearchCatagory
+                        text='Comics'
+                        icon={require('../../assets/icons/rightErrow.png')}
+                    // onPress={() => navigation.goBack()}
+                    />
+                    <SearchCatagory
+                        text='Crime'
+                        icon={require('../../assets/icons/rightErrow.png')}
+                    // onPress={() => navigation.goBack()}
+                    />
+                    <SearchCatagory
+                        text='Fantacy'
+                        icon={require('../../assets/icons/rightErrow.png')}
+                    // onPress={() => navigation.goBack()}
+                    />
 
-                <SearchCatagory
-                    text='Fiction'
-                    icon={require('../../assets/icons/rightErrow.png')}
-                // onPress={() => navigation.goBack()}
-                />
-                <SearchCatagory
-                    text='Classics'
-                    icon={require('../../assets/icons/rightErrow.png')}
-                // onPress={() => navigation.goBack()}
-                />
+                    <SearchCatagory
+                        text='Fiction'
+                        icon={require('../../assets/icons/rightErrow.png')}
+                    // onPress={() => navigation.goBack()}
+                    />
+                    <SearchCatagory
+                        text='Classics'
+                        icon={require('../../assets/icons/rightErrow.png')}
+                    // onPress={() => navigation.goBack()}
+                    />
+                </View>
             </ScrollView>
         </View>
 
