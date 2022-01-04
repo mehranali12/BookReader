@@ -7,7 +7,7 @@ import TextInputField from '../../components/TextInputField';
 import TextButton from '../../components/TextButton';
 
 
-const CustomDrawer = ({ props, navigation }) => {
+const changePassword = ({ props, navigation }) => {
     return (
         <View style={{ flex: 1 }}>
             <Header
@@ -37,16 +37,15 @@ const CustomDrawer = ({ props, navigation }) => {
                 />
             </View>
 
-            <View style={{ marginHorizontal: 24, marginTop: 24 }}>
+            <View style={{ marginTop: 50, marginHorizontal: 24, }}>
                 <TextButton
                     style={{ color: COLORS.white, }}
                     text='Reset Paswword'
                     bgcolor={COLORS.primary}
-                // onPress={() => navigation.navigate('otp')}
                 />
             </View>
 
-            <View style={{ marginTop: 16, marginHorizontal: 24 }}>
+            <View style={{ marginTop: 24, marginHorizontal: 24, }}>
                 <TextButton
                     style={{ color: COLORS.black, }}
                     text='Cancle'
@@ -59,7 +58,7 @@ const CustomDrawer = ({ props, navigation }) => {
     );
 };
 
-export default CustomDrawer;
+export default changePassword;
 
 const styles = StyleSheet.create({
 

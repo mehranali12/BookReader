@@ -16,14 +16,16 @@ const CustomDrawer = ({ props, navigation }) => {
                     />
                 </View>
                 <View style={{ marginTop: 6, justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={[TextStyle.h7, { color: COLORS.primary, fontWeight: '500' }]}>Change profile image</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('updateProfile')}>
+                        <Text style={[TextStyle.h7, { color: COLORS.primary, fontWeight: '500' }]}>Change profile image</Text>
+                    </TouchableOpacity>
                     <Text style={[TextStyle.h3, { marginTop: 6, color: COLORS.black, fontWeight: '500' }]}>Ali Ullah Turi</Text>
                 </View>
             </View>
 
 
             <View style={{ flex: 1.8, backgroundColor: COLORS.primary, }}>
-                <TouchableOpacity onPress={()=>navigation.navigate('changePassword')}>
+                <TouchableOpacity onPress={() => navigation.navigate('changePassword')}>
                     <View style={{ flexDirection: 'row', marginVertical: 24, marginHorizontal: 15, }}>
                         <Image
                             style={{}}
@@ -33,34 +35,38 @@ const CustomDrawer = ({ props, navigation }) => {
                     </View>
                 </TouchableOpacity>
 
-                <View style={{ flexDirection: 'row', marginHorizontal: 15, }}>
-                    <Image
-                        style={{}}
-                        source={require('../../../assets/icons/setting1.png')}
-                    />
-                    <Text style={[TextStyle.h5, styles.listText]}>Setting</Text>
-                </View>
-
-                <View style={{ flexDirection: 'row', marginTop: 24, marginHorizontal: 15, }}>
-                    <Image
-                        style={{}}
-                        source={require('../../../assets/icons/help.png')}
-                    />
-                    <Text style={[TextStyle.h5, styles.listText]}>About</Text>
-                </View>
-
-                <View style={{ flex: 1, justifyContent: "flex-end" }}>
-                    <View style={{ flexDirection: 'row', marginHorizontal: 15, marginBottom: 15, }}>
+                <TouchableOpacity onPress={() => navigation.navigate('accountSetting')}>
+                    <View style={{ flexDirection: 'row', marginHorizontal: 15, }}>
                         <Image
                             style={{}}
-                            source={require('../../../assets/icons/signout.png')}
+                            source={require('../../../assets/icons/setting1.png')}
                         />
-                        <Text style={[TextStyle.h5, styles.listText]}>Logout</Text>
+                        <Text style={[TextStyle.h5, styles.listText]}>Setting</Text>
                     </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => navigation.navigate('about')}>
+                    <View style={{ flexDirection: 'row', marginTop: 24, marginHorizontal: 15, }}>
+                        <Image
+                            style={{}}
+                            source={require('../../../assets/icons/help.png')}
+                        />
+                        <Text style={[TextStyle.h5, styles.listText]}>About</Text>
+                    </View>
+                </TouchableOpacity>
+
+                <View style={{ flex: 1, justifyContent: "flex-end" }}>
+                    <TouchableOpacity onPress={() => navigation.navigate('signin')}>
+                        <View style={{ flexDirection: 'row', marginHorizontal: 15, marginBottom: 15, }}>
+                            <Image
+                                style={{}}
+                                source={require('../../../assets/icons/signout.png')}
+                            />
+                            <Text style={[TextStyle.h5, styles.listText]}>Logout</Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
             </View>
-
-
 
         </View>
     );
