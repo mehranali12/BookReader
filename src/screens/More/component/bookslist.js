@@ -10,6 +10,7 @@ export default function bookList({ index }) {
             justifyContent: 'space-between',
             marginHorizontal: 18,
             paddingBottom: 16,
+            paddingTop: 10,
             borderBottomWidth: 1,
             borderColor: "gray",
             // borderTopLeftRadius: index == 0 ? 12 : 0

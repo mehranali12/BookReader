@@ -7,6 +7,7 @@ import home from '../home';
 import Discover from '../Discover/Discover';
 import Search from '../Search/Search';
 import More from '../More/More';
+import stack from '../More/Navigation/navigation';
 
 
 export default function tab() {
@@ -61,7 +62,7 @@ export default function tab() {
 
             <Tab.Screen
                 name="More"
-                component={More}
+                component={stack}
                 options={{
                     // tabBarVisible: false,
                     tabBarIcon: ({ color }) => (

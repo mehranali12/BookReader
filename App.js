@@ -16,8 +16,6 @@ import homeTab from './src/screens/Navigation/navigation'
 const Stack = createStackNavigator();
 
 
-
-
 const App = () => {
   return (
     <NavigationContainer>
