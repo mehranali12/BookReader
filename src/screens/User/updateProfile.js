@@ -75,7 +75,7 @@ const updateProfile = ({ props, navigation }) => {
 
                 <View style={{ marginTop: 18, marginLeft: 34, flexDirection: 'row' }}>
                     <View>
-                        <TouchableOpacity onPress={takePhotoFromCamera}>
+                        <TouchableOpacity onPress={() => takePhotoFromCamera()}>
                             <View style={styles.pickerBox}>
                                 <Image
                                     source={require('../../assets/icons/camera1.png')} />
