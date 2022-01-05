@@ -1,12 +1,53 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { COLORS } from '../../constants/colors';
 import { TextStyle } from '../../utils/GlobalStyles';
 import Header from '../../components/header';
+import ImagePicker from 'react-native-image-crop-picker';
 
-// tabBarVisible = false
 
 const updateProfile = ({ props, navigation }) => {
+
+    // let selectImages = () => {
+    //     const buttons = ['Camera', 'Photo Library', 'Cancel'];
+    //     ActionSheet.show(
+    //         {
+    //             options: buttons,
+    //             cancelButtonIndex: 2,
+    //         },
+    //         buttonIndex => {
+    //             switch (buttonIndex) {
+    //                 case 0:
+    //                     takePhotoFromCamera();
+    //                     break;
+    //                 case 1:
+    //                     choosePhotosFromGallery();
+    //                     break;
+    //                 default:
+    //                     break;
+    //             }
+    //         },
+    //     );
+    // }
+
+
+    const takePhotoFromCamera = async () => {
+        ImagePicker.openCamera({
+            cropping: true,
+            width: 500,
+            height: 500,
+            includeExif: true,
+            mediaType: 'photo',
+        })
+            .then(response => {
+                console.log('received your image', response);
+                var temp = [...imageArray]
+                temp.push(response)
+                setdata(temp)
+            }).catch((e) => console.log('error', error))
+    };
+
+
     return (
         <View style={{ flex: 1, backgroundColor: COLORS.grayLight, }}>
             <Header
@@ -34,22 +75,27 @@ const updateProfile = ({ props, navigation }) => {
 
                 <View style={{ marginTop: 18, marginLeft: 34, flexDirection: 'row' }}>
                     <View>
-                        <View style={styles.pickerBox}>
-                            <Image
-                                source={require('../../assets/icons/camera1.png')} />
-                        </View>
-                        <View>
-                            <Text style={styles.text}>Camera</Text>
-                        </View>
+                        <TouchableOpacity onPress={takePhotoFromCamera}>
+                            <View style={styles.pickerBox}>
+                                <Image
+                                    source={require('../../assets/icons/camera1.png')} />
+                            </View>
+                            <View>
+                                <Text style={styles.text}>Camera</Text>
+                            </View>
+                        </TouchableOpacity>
                     </View>
-                    <View style={{marginLeft: 16,}}>
-                        <View style={styles.pickerBox}>
-                            <Image
-                                source={require('../../assets/icons/gallery.png')} />
-                        </View>
-                        <View>
-                            <Text style={styles.text}>Gallery</Text>
-                        </View>
+
+                    <View style={{ marginLeft: 16, }}>
+                        <TouchableOpacity>
+                            <View style={styles.pickerBox}>
+                                <Image
+                                    source={require('../../assets/icons/gallery.png')} />
+                            </View>
+                            <View>
+                                <Text style={styles.text}>Gallery</Text>
+                            </View>
+                        </TouchableOpacity>
                     </View>
                 </View>
 
@@ -61,15 +107,15 @@ const updateProfile = ({ props, navigation }) => {
 export default updateProfile;
 
 const styles = StyleSheet.create({
-pickerBox:{
-    alignItems: 'center', 
-    borderWidth: 1, 
-    borderColor: COLORS.primary, 
-    height: 50, width: 50, 
-    borderRadius: 50, 
-    justifyContent: 'center'
-},
-text:{
-    color: COLORS.primary
-}
+    pickerBox: {
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: COLORS.primary,
+        height: 50, width: 50,
+        borderRadius: 50,
+        justifyContent: 'center'
+    },
+    text: {
+        color: COLORS.primary
+    }
 });

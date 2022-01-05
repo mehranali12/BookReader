@@ -8,6 +8,7 @@ const COLORS = {
   gray: '#C4C4C4',
   grayLight: '#F4F4F4',
   TextInputColor: '#B9B9B9',
+  bouttonColor: '#D0D0D0',
   white: '#FFFFFF',
   blue: '#002566',
   black:'#191716',
