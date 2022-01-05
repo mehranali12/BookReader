@@ -11,14 +11,22 @@ import reading from './src/screens/reading';
 import resetPassword from './src/screens/resetPassword';
 import signin from './src/screens/signin';
 import signup from './src/screens/signup';
-import homeTab from './src/screens/Navigation/navigation'
+import homeTab from './src/screens/Navigation/navigation';
+import RNBootSplash from "react-native-bootsplash";
 
 const Stack = createStackNavigator();
 
 
 const App = () => {
+  
+  // useEffect(() => {
+  //   SplashScreen.hide();
+  // }, [])
+
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      onReady={() => RNBootSplash.hide()}
+    >
       <Stack.Navigator
         screenOptions={{
           headerShown: false
@@ -44,3 +52,5 @@ const App = () => {
 const styles = StyleSheet.create({});
 
 export default App;
+
+//https://github.com/captainIN/splashexample/blob/main/android/app/src/main/res/layout/launch_screen.xml
