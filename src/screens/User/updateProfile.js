@@ -8,29 +8,6 @@ import ImagePicker from 'react-native-image-crop-picker';
 
 const updateProfile = ({ props, navigation }) => {
 
-    // let selectImages = () => {
-    //     const buttons = ['Camera', 'Photo Library', 'Cancel'];
-    //     ActionSheet.show(
-    //         {
-    //             options: buttons,
-    //             cancelButtonIndex: 2,
-    //         },
-    //         buttonIndex => {
-    //             switch (buttonIndex) {
-    //                 case 0:
-    //                     takePhotoFromCamera();
-    //                     break;
-    //                 case 1:
-    //                     choosePhotosFromGallery();
-    //                     break;
-    //                 default:
-    //                     break;
-    //             }
-    //         },
-    //     );
-    // }
-
-
     const takePhotoFromCamera = async () => {
         ImagePicker.openCamera({
             cropping: true,
