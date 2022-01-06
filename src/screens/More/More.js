@@ -81,15 +81,16 @@ export default function More({ navigation }) {
                     />
                 </View>
 
-                <View style={{ flexDirection: 'row', marginTop: 10, justifyContent:"center" }}>
-                    <Text style={[TextStyle.h1 , {marginLeft:24}]}>Mehran Ali</Text>
-                    <View style={{paddingLeft:12 , justifyContent:"center"}}>
-                    <Image
-                      
-                      source={require('../../assets/icons/edit.png')}
-                  />
-                    </View>
-                  
+                <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: "center", alignItems: 'center' }}>
+                    <Text style={[TextStyle.h1, { marginLeft: 24 }]}>Mehran Ali</Text>
+                    <TouchableOpacity  onPress={() => navigation.navigate('updateProfile')}>
+                        <View style={{ marginLeft: 12 }}>
+                            <Image
+                                source={require('../../assets/icons/edit.png')}
+                                style={{ height: 16, width: 16, }}
+                            />
+                        </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={{ flexDirection: 'row', marginTop: '4%', justifyContent: "center" }}>
                     <View style={{ marginRight: '4%' }} >
@@ -141,10 +142,10 @@ export default function More({ navigation }) {
                             />
                         )
                     }}
-                    ListHeaderComponent={()=> {
-                        return(
-                            <View style={{height:10}}>
-                                </View>
+                    ListHeaderComponent={() => {
+                        return (
+                            <View style={{ height: 10 }}>
+                            </View>
                         )
                     }}
                     keyExtractor={(item, index) => index}
