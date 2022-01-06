@@ -1,8 +1,8 @@
+import 'react-native-gesture-handler';
+import React, { useEffect } from 'react';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import React ,{useEffect}from 'react';
-import { StyleSheet } from 'react-native';
-import 'react-native-gesture-handler';
 import continueReading from './src/screens/continueReading';
 import forgetPassword from './src/screens/forgetPassword';
 import join from './src/screens/join';
@@ -14,24 +14,23 @@ import signup from './src/screens/signup';
 import homeTab from './src/screens/Navigation/navigation'
 import RNBootSplash from "react-native-bootsplash";
 
+
 const Stack = createStackNavigator();
 
 
 const App = () => {
+
   useEffect(() => {
     RNBootSplash.hide({ fade: true });
-
   }, [])
+
   return (
-    <NavigationContainer
-      onReady={() => RNBootSplash.hide()}
-    >
+    <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
           headerShown: false
         }}>
 
-        {/* <Stack.Screen name="splish" component={splish} /> */}
         <Stack.Screen name="join" component={join} />
         <Stack.Screen name="signin" component={signin} />
         <Stack.Screen name="home" component={homeTab} />
@@ -51,5 +50,3 @@ const App = () => {
 const styles = StyleSheet.create({});
 
 export default App;
-
-//https://github.com/captainIN/splashexample/blob/main/android/app/src/main/res/layout/launch_screen.xml
