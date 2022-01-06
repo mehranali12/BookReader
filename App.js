@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import React from 'react';
+import React ,{useEffect}from 'react';
 import { StyleSheet } from 'react-native';
 import 'react-native-gesture-handler';
 import continueReading from './src/screens/continueReading';
@@ -12,11 +12,16 @@ import resetPassword from './src/screens/resetPassword';
 import signin from './src/screens/signin';
 import signup from './src/screens/signup';
 import homeTab from './src/screens/Navigation/navigation'
+import RNBootSplash from "react-native-bootsplash";
 
 const Stack = createStackNavigator();
 
 
 const App = () => {
+  useEffect(() => {
+    RNBootSplash.hide({ fade: true });
+
+  }, [])
   return (
     <NavigationContainer>
       <Stack.Navigator
