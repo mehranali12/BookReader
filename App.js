@@ -23,7 +23,9 @@ const App = () => {
 
   }, [])
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      onReady={() => RNBootSplash.hide()}
+    >
       <Stack.Navigator
         screenOptions={{
           headerShown: false
@@ -49,3 +51,5 @@ const App = () => {
 const styles = StyleSheet.create({});
 
 export default App;
+
+//https://github.com/captainIN/splashexample/blob/main/android/app/src/main/res/layout/launch_screen.xml

@@ -8,34 +8,12 @@ import ImagePicker from 'react-native-image-crop-picker';
 
 const updateProfile = ({ props, navigation }) => {
 
-    // let selectImages = () => {
-    //     const buttons = ['Camera', 'Photo Library', 'Cancel'];
-    //     ActionSheet.show(
-    //         {
-    //             options: buttons,
-    //             cancelButtonIndex: 2,
-    //         },
-    //         buttonIndex => {
-    //             switch (buttonIndex) {
-    //                 case 0:
-    //                     takePhotoFromCamera();
-    //                     break;
-    //                 case 1:
-    //                     choosePhotosFromGallery();
-    //                     break;
-    //                 default:
-    //                     break;
-    //             }
-    //         },
-    //     );
-    // }
-
 
     const takePhotoFromCamera = async () => {
         ImagePicker.openCamera({
             cropping: true,
-            width: 500,
-            height: 500,
+            width: 300,
+            height: 400,
             includeExif: true,
             mediaType: 'photo',
         })
@@ -44,8 +22,20 @@ const updateProfile = ({ props, navigation }) => {
                 var temp = [...imageArray]
                 temp.push(response)
                 setdata(temp)
-            }).catch((e) => console.log('error', error))
+            }).catch((e) => console.log(''))
     };
+
+
+    const takePhotoFromGallery = async () => {
+        ImagePicker.openPicker({
+            width: 300,
+            height: 400,
+            cropping: true
+        }).then(image => {
+            console.log(image);
+        });
+    };
+
 
 
     return (
@@ -87,7 +77,7 @@ const updateProfile = ({ props, navigation }) => {
                     </View>
 
                     <View style={{ marginLeft: 16, }}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => takePhotoFromGallery()}>
                             <View style={styles.pickerBox}>
                                 <Image
                                     source={require('../../assets/icons/gallery.png')} />
