@@ -24,7 +24,6 @@ const App = () => {
   }, [])
   return (
     <NavigationContainer
-      onReady={() => RNBootSplash.hide()}
     >
       <Stack.Navigator
         screenOptions={{
